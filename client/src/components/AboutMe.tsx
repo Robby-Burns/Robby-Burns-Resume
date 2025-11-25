@@ -18,7 +18,7 @@ const stats = [
   {
     icon: Trophy,
     title: "Team Allegiances",
-    description: "Seattle Sounders, Philadelphia Eagles, WSU Go Cougs!",
+    description: "Seattle Sounders, Philadelphia Eagles.",
     gradient: "from-amber-500/20 to-amber-500/5",
   },
   {

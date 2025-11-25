@@ -40,9 +40,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed"
         >
-          Building multi-agent systems by day.
-          <br />
-          <span className="text-emerald-300">Raising a family in the PNW by night.</span>
+          <span className="text-emerald-300">The API Between Management and AI.</span>
         </motion.p>
         
         <motion.div 
