@@ -1,24 +1,54 @@
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { SiPython, SiOpenai, SiReplit } from "react-icons/si";
-import { Link2, Database, BarChart3, ListTodo } from "lucide-react";
+import { 
+  Brain, 
+  Bot, 
+  Code2, 
+  Database, 
+  LineChart, 
+  MessageSquare, 
+  Cog, 
+  Target,
+  Users,
+  Sparkles,
+  GitBranch,
+  BarChart3,
+  Route,
+  FlaskConical,
+  Shield
+} from "lucide-react";
 
-const technologies = [
-  { name: "Python", icon: SiPython, color: "#3776AB" },
-  { name: "OpenAI / LLMs", icon: SiOpenai, color: "#10a37f" },
-  { name: "LangChain", icon: Link2, color: "#1C3C3C" },
-  { name: "SQL", icon: Database, color: "#336791" },
-  { name: "Tableau", icon: BarChart3, color: "#E97627" },
-  { name: "Jira", icon: ListTodo, color: "#0052CC" },
-  { name: "Replit", icon: SiReplit, color: "#F26207" },
+const skills = [
+  { name: "LLMs", icon: Brain, category: "AI" },
+  { name: "Agentic AI", icon: Bot, category: "AI" },
+  { name: "Python", icon: Code2, category: "Technical" },
+  { name: "SQL", icon: Database, category: "Technical" },
+  { name: "Machine Learning", icon: Sparkles, category: "AI" },
+  { name: "Predictive Modeling", icon: LineChart, category: "AI" },
+  { name: "Chatbot Development", icon: MessageSquare, category: "AI" },
+  { name: "Data Visualization", icon: BarChart3, category: "Technical" },
+  { name: "Process Automation", icon: Cog, category: "Technical" },
+  { name: "Product Lifecycle", icon: Route, category: "Product" },
+  { name: "Agile/Scrum", icon: GitBranch, category: "Product" },
+  { name: "Cross-functional Leadership", icon: Users, category: "Leadership" },
+  { name: "UX Design", icon: Target, category: "Product" },
+  { name: "A/B Testing", icon: FlaskConical, category: "Product" },
+  { name: "Regulatory Compliance", icon: Shield, category: "Leadership" },
 ];
+
+const categoryColors: Record<string, string> = {
+  "AI": "text-emerald-500",
+  "Technical": "text-blue-500",
+  "Product": "text-amber-500",
+  "Leadership": "text-purple-500",
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.05
     }
   }
 };
@@ -39,14 +69,22 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="inline-block text-sm font-semibold tracking-widest text-primary uppercase mb-4">
-            Technologies
+            Expertise
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight mb-6">
             My Toolkit
           </h2>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {Object.entries(categoryColors).map(([category, color]) => (
+              <div key={category} className="flex items-center gap-2">
+                <div className={`w-2 h-2 rounded-full ${color.replace('text-', 'bg-')}`} />
+                <span className="text-muted-foreground">{category}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
         
         <motion.div 
@@ -54,24 +92,22 @@ export default function TechStack() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4"
         >
-          {technologies.map((tech) => {
-            const Icon = tech.icon;
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+            const colorClass = categoryColors[skill.category];
             return (
-              <motion.div key={tech.name} variants={itemVariants}>
+              <motion.div key={skill.name} variants={itemVariants}>
                 <Card
-                  className="group p-6 md:p-8 flex flex-col items-center justify-center gap-4 hover-elevate transition-all duration-300 cursor-default border-transparent hover:border-primary/20 bg-card/50 backdrop-blur-sm"
-                  data-testid={`tech-${tech.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="group p-4 md:p-5 flex flex-col items-center justify-center gap-3 hover-elevate transition-all duration-300 cursor-default border-transparent hover:border-primary/20 bg-card/50 backdrop-blur-sm h-full"
+                  data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
-                  <div 
-                    className="p-4 rounded-2xl bg-muted/50 group-hover:bg-muted transition-colors duration-300"
-                    style={{ color: tech.color }}
-                  >
-                    <Icon className="h-8 w-8 md:h-10 md:w-10" />
+                  <div className={`p-3 rounded-xl bg-muted/50 group-hover:bg-muted transition-colors duration-300 ${colorClass}`}>
+                    <Icon className="h-6 w-6 md:h-7 md:w-7" />
                   </div>
-                  <span className="text-sm md:text-base font-semibold text-center text-foreground">
-                    {tech.name}
+                  <span className="text-xs md:text-sm font-medium text-center text-foreground leading-tight">
+                    {skill.name}
                   </span>
                 </Card>
               </motion.div>
