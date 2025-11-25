@@ -1,28 +1,58 @@
 import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { MessageSquare, Sparkles } from "lucide-react";
 
 export default function ChatbotSection() {
   return (
-    <section id="chatbot-section" className="py-20 md:py-24 px-4 bg-background">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+    <section id="chatbot-section" className="py-24 md:py-32 px-6 bg-background relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(30,58,46,0.08)_0%,_transparent_60%)]" />
+      
+      <div className="max-w-5xl mx-auto relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <Sparkles className="h-4 w-4" />
+            <span>Interactive Experience</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight mb-4">
             Interview My AI
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             I trained this agent on my full professional history. Ask it about my specific projects at Dutch Bros, my Master's degree, or how I used IoT in agriculture.
           </p>
-        </div>
-        <Card className="p-8 md:p-12 min-h-[500px] flex items-center justify-center border-2 shadow-lg">
-          <div className="text-center space-y-4">
-            <div className="text-6xl">🤖</div>
-            <p className="text-xl font-medium text-muted-foreground" data-testid="text-chatbot-placeholder">
-              Chatbot loads here
-            </p>
-            <p className="text-sm text-muted-foreground/70">
-              Iframe integration point for AI agent
-            </p>
-          </div>
-        </Card>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Card className="relative p-1 min-h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl" />
+            <div className="relative h-full min-h-[500px] bg-card rounded-xl flex flex-col items-center justify-center p-8">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
+                <MessageSquare className="h-10 w-10 text-primary-foreground" />
+              </div>
+              <p className="text-xl font-semibold text-foreground mb-2" data-testid="text-chatbot-placeholder">
+                Chatbot loads here
+              </p>
+              <p className="text-sm text-muted-foreground text-center max-w-md">
+                This is where you can paste your AI agent iframe code for visitors to interact with your trained chatbot
+              </p>
+              <div className="mt-8 flex items-center gap-2 text-xs text-muted-foreground/60">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span>Ready for integration</span>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );
