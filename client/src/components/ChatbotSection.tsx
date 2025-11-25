@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { MessageSquare, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export default function ChatbotSection() {
   return (
@@ -34,22 +34,16 @@ export default function ChatbotSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Card className="relative p-1 min-h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent">
+          <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl" />
-            <div className="relative h-full min-h-[500px] bg-card rounded-xl flex flex-col items-center justify-center p-8">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
-                <MessageSquare className="h-10 w-10 text-primary-foreground" />
-              </div>
-              <p className="text-xl font-semibold text-foreground mb-2" data-testid="text-chatbot-placeholder">
-                Chatbot loads here
-              </p>
-              <p className="text-sm text-muted-foreground text-center max-w-md">
-                This is where you can paste your AI agent iframe code for visitors to interact with your trained chatbot
-              </p>
-              <div className="mt-8 flex items-center gap-2 text-xs text-muted-foreground/60">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span>Ready for integration</span>
-              </div>
+            <div className="relative bg-card rounded-xl overflow-hidden">
+              <iframe 
+                src="https://rob200-robby-burns-chatbot.hf.space" 
+                className="w-full border-0"
+                style={{ minHeight: '600px' }}
+                title="Robby Burns AI Chatbot"
+                data-testid="iframe-chatbot"
+              />
             </div>
           </Card>
         </motion.div>
