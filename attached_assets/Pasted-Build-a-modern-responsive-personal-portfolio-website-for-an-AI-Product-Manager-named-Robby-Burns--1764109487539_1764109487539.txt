@@ -1,0 +1,62 @@
+Build a modern, responsive personal portfolio website for an AI Product Manager named Robby Burns.
+
+**Tech Stack:**
+- React (Vite)
+- Tailwind CSS
+- Lucide React (for icons)
+- Framer Motion (for subtle animations, if possible)
+
+**Design Aesthetic (Pacific Northwest Vibe):**
+- **Palette:** Deep forest greens, slate grays, navy blues, and crisp white.
+- **Typography:** Clean, modern sans-serif (Inter or Roboto). High readability.
+- **Vibe:** Professional, yet laid-back and outdoorsy.
+
+**Page Structure & Content:**
+
+**1. Hero Section:**
+- Background: A deep slate or forest green gradient.
+- Headline: "Robby Burns | AI Product Manager & Builder"
+- Sub-headline: "Building multi-agent systems by day. Raising a family in the PNW by night."
+- Call to Action Button: "Ask My AI Agent" (Smooth scroll to the Chatbot section).
+
+**2. The Narrative Section (The Pivot Story):**
+- **Layout:** A clean, editorial text block (centered, max-width 65ch).
+- **Title:** "From the Field to the Future"
+- **Text Content:**
+  "People often ask how I went from owning a farm and a brewery to building AI agents. To me, it was the natural next step.
+  As a farmer, I didn't just drive tractors—I architected IoT sensor networks that reduced chemical use by 40%. As a brewery owner, I didn't just pour pints—I used A/B testing and data analytics to drive a 30% increase in customer acquisition.
+  I realized that my true passion wasn't just in the product, but in the intelligence behind it.
+  That curiosity led me to a Master’s in Data Science and a deep dive into Large Language Models. Now, instead of optimizing crop yields, I optimize multi-agent workflows. I bring the grit of a business owner and the rigor of a data scientist to every product I build."
+
+**3. Tech Stack Section:**
+- **Title:** "My Toolkit"
+- Display a clean, horizontal grid of badges/cards with icons for:
+  - Python
+  - OpenAI / LLMs
+  - LangChain
+  - SQL
+  - Tableau
+  - Jira
+  - Replit
+
+**4. The Interactive Chatbot Section (Main Feature):**
+- **Headline:** "Interview My AI"
+- **Sub-headline:** "I trained this agent on my full professional history. Ask it about my specific projects at Dutch Bros, my Master's degree, or how I used IoT in agriculture."
+- **Action:** Create a styled container (div) with a distinct border/shadow where I can paste my Chatbot Iframe code later. For now, put a placeholder inside that says "Chatbot loads here."
+
+**5. About Me & Stats (The Personal Side):**
+- **Layout:** Two columns. Left column is text, Right column is a "Quick Stats" card grid.
+- **Left Column Text:**
+  "Hi, I’m Robby. I’ve worn a lot of hats—I started and ran a farm and owned a brewery before I pivoted to building the future with Artificial Intelligence. Life is weird, right?
+  I love skiing and snowboarding with my family, playing soccer, and paddleboarding. I’m all about good times with friends, family, art, and music (my favorite genre is punk, but the best music is whatever fits the vibe). I root for the Seattle Sounders and the Philadelphia Eagles, which makes for some very loud Sundays in our house.
+  Ask my chatbot about my work history, but ask me if you want to grab a beer or talk sports."
+- **Right Column (Quick Stats Cards):**
+  - **Current Project:** Raising 4 kids (and a couple of AI chatbots).
+  - **Weekend Habitat:** The ski slopes, paddleboarding, or the soccer pitch. (But mostly trucking the kiddos around.)
+  - **Team Allegiances:** Seattle Sounders (MLS), Philadelphia Eagles (NFL), and Washington State University (Go Cougs!).
+  - **Past Life:** Founder of a brewery & a farm.
+  - **Fun Fact:** I have a sports pilot license. ✈️
+
+**6. Footer:**
+- Simple copyright 2025.
+- Social Links (LinkedIn, GitHub, Email).
