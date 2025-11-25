@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -25,16 +25,6 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="relative z-10 max-w-4xl mx-auto text-center px-6 space-y-8"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium"
-        >
-          <Sparkles className="h-4 w-4" />
-          <span>AI Product Manager</span>
-        </motion.div>
-        
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
