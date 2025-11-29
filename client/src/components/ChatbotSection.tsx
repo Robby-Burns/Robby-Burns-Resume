@@ -8,7 +8,6 @@ export default function ChatbotSection() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(30,58,46,0.08)_0%,_transparent_60%)]" />
       
-      {/* Changed max-w-7xl to max-w-4xl for a cleaner single-column stack */}
       <div className="max-w-4xl mx-auto relative">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -29,8 +28,8 @@ export default function ChatbotSection() {
           </p>
         </motion.div>
         
-        {/* VERTICAL STACK LAYOUT (Space-y-16 adds gap between agents) */}
-        <div className="space-y-16">
+        {/* VERTICAL STACK LAYOUT */}
+        <div className="space-y-20"> {/* Increased spacing between agents for clarity */}
 
           {/* --- AGENT 1: SELF SERVE ANALYST --- */}
           <motion.div
@@ -39,19 +38,20 @@ export default function ChatbotSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="mb-6 space-y-2 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-semibold text-xl">
-                <Database className="h-6 w-6" />
+            {/* UPDATED: Removed md:text-left to force center alignment */}
+            <div className="mb-8 space-y-3 text-center"> 
+              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-2xl">
+                <Database className="h-7 w-7" />
                 <h3>Self-Serve Credit Union Analyst</h3>
               </div>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 <span className="font-semibold text-foreground">Architecture:</span> LangGraph, Docker, SQLite.
                 <br/>
                 Allows non-technical users to query banking data via SQL generation and executes Python for visualization in a sandbox.
               </p>
             </div>
 
-            <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent shadow-xl">
+            <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl" />
               <div className="relative bg-card rounded-xl overflow-hidden">
                 <iframe 
@@ -71,19 +71,20 @@ export default function ChatbotSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-             <div className="mb-6 space-y-2 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-semibold text-xl">
-                <FileCode className="h-6 w-6" />
+             {/* UPDATED: Forced Center Alignment */}
+             <div className="mb-8 space-y-3 text-center">
+              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-2xl">
+                <FileCode className="h-7 w-7" />
                 <h3>Legacy Code Documentation Agent</h3>
               </div>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 <span className="font-semibold text-foreground">Architecture:</span> Streamlit, LLM Analysis.
                 <br/>
                 Ingests legacy codebases and generates comprehensive documentation to accelerate modernization.
               </p>
             </div>
 
-            <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent shadow-xl">
+            <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl" />
               <div className="relative bg-card rounded-xl overflow-hidden">
                 <iframe 
@@ -103,20 +104,20 @@ export default function ChatbotSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-             <div className="mb-6 space-y-2 text-center md:text-left">
-              {/* UPDATED: Matches the Green (text-primary) style of other agents */}
-              <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-semibold text-xl">
-                <UserCircle className="h-6 w-6" />
+             {/* UPDATED: Forced Center Alignment */}
+             <div className="mb-8 space-y-3 text-center">
+              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-2xl">
+                <UserCircle className="h-7 w-7" />
                 <h3>Interactive Professional History</h3>
               </div>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 <span className="font-semibold text-foreground">Architecture:</span> RAG, OpenAI, Custom Prompt Engineering.
                 <br/>
                 Trained on my full resume, educational background, and project portfolio.
               </p>
             </div>
 
-            <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent shadow-xl">
+            <Card className="relative p-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl" />
               <div className="relative bg-card rounded-xl overflow-hidden">
                 <iframe 
