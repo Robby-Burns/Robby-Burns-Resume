@@ -9,10 +9,17 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
-      <Narrative />
-      <TechStack />
+      
+      {/* 1. AGENTS FIRST: Immediate proof of skills */}
       <ChatbotSection />
+      
+      {/* 2. TECH STACK: How you built them */}
+      <TechStack />
+      
+      {/* 3. NARRATIVE & BIO: The backstory (moved to bottom) */}
+      <Narrative />
       <AboutMe />
+      
       <Footer />
     </div>
   );
