@@ -55,7 +55,7 @@ export default function Hero() {
             data-testid="button-ask-agent"
             className="bg-white text-[#1e3a2e] hover:bg-white/90 text-base font-semibold px-8 py-6 h-auto rounded-full shadow-lg shadow-black/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
-            Ask My AI Agent
+            Check out my AI Agents
             <ArrowDown className="ml-2 h-5 w-5" />
           </Button>
         </motion.div>
