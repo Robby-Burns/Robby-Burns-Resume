@@ -16,20 +16,21 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(45,90,69,0.4)_0%,_transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(30,58,95,0.3)_0%,_transparent_50%)]" />
       
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* Background blobs - hidden on mobile */}
+      <div className="hidden md:block absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="hidden md:block absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-4xl mx-auto text-center px-6 space-y-8"
+        className="relative z-10 max-w-4xl mx-auto text-center px-4 md:px-6 space-y-6 md:space-y-8"
       >
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white tracking-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white tracking-tight"
         >
           Robby Burns
         </motion.h1>
@@ -38,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-2xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed"
         >
           <span className="text-emerald-300">The API Between Management and AI.</span>
         </motion.p>
@@ -47,29 +48,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="pt-6"
+          className="pt-4 md:pt-6"
         >
           <Button 
             size="lg"
             onClick={scrollToChatbot}
             data-testid="button-ask-agent"
-            className="bg-white text-[#1e3a2e] hover:bg-white/90 text-base font-semibold px-8 py-6 h-auto rounded-full shadow-lg shadow-black/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="bg-white text-[#1e3a2e] hover:bg-white/90 text-sm md:text-base font-semibold px-6 py-4 md:px-8 md:py-6 h-auto rounded-full shadow-lg shadow-black/20 transition-all duration-300 hover:scale-105 hover:shadow-xl w-full md:w-auto"
           >
             Check out my AI Agents
-            <ArrowDown className="ml-2 h-5 w-5" />
+            <ArrowDown className="ml-2 h-4 w-4 md:h-5 md:w-5" />
           </Button>
         </motion.div>
       </motion.div>
       
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
-        >
-          <div className="w-1 h-2 bg-white/50 rounded-full" />
-        </motion.div>
-      </div>
+      {/* Removed the animated oval scroll indicator from here */}
     </section>
   );
 }
